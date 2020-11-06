@@ -13,5 +13,5 @@ Dado('que acesso a página de cadastro') do
     end
   
   Então('devo ser redirecionado para a área logada') do
-    expect(page).to have_css '.dashboard'
+    expect(page).to have_css('.dashboard')
     end

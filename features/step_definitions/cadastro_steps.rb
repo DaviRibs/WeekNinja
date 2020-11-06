@@ -9,9 +9,9 @@ Dado('que acesso a página de cadastro') do
        find("input[placeholder='Sua senha secreta']").set user[:senha]
        find("input[placeholder='Confirme a senha']").set user[:senha_confirmada]
 
-       sleep 5 #temporario
+       click_button 'Cadastrar'
     end
   
   Então('devo ser redirecionado para a área logada') do
-        pending # Write code here that turns the phrase above into concrete actions
+    expect(page).to have_css '.dashboard'
     end

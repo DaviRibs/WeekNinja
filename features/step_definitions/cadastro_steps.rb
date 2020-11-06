@@ -9,7 +9,7 @@ Dado('que acesso a página de cadastro') do
        find("input[placeholder='Sua senha secreta']").set user[:senha]
        find("input[placeholder='Confirme a senha']").set user[:senha_confirmada]
 
-       click_button 'Cadastrar'
+       click_on 'Cadastrar'
     end
   
   Então('devo ser redirecionado para a área logada') do

@@ -18,28 +18,3 @@
         Então('devo ser redirecionado para a área logada') do
         expect(page).to have_css('.dashboard')
         end
-
-      Quando('submeto o meu cadastro sem o email') do
-        find("input[placeholder='Sua senha secreta']").set "q1w2e3"
-        find("input[placeholder='Confirme a senha']").set "q1w2e3"
-
-        click_on 'Cadastrar'
-      end
-    
-      Então('devo ver Oops! Informe seu email') do
-        alert = find(".message p")
-        expect(alert.text).to eql 'Oops! Informe seu email.'
-
-
-      end
-
-      Quando('submeto o meu cadastro sem a senha') do
-        find("input[name*=email]").set '1davirb@hotmail.com'
-        
-       click_on 'Cadastrar'
-      end
-      
-      Então('devo ver Oops! Informe sua senha') do
-        alert = find(".message p")
-        expect(alert.text).to eql 'Oops! Informe sua senha.'
-      end

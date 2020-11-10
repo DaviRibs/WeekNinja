@@ -13,23 +13,43 @@ Cenario: Cadastro
     |senha_confirmada| q1w2e3           |
     Então devo ser redirecionado para a área logada
 
-
-Cenario: Email não informado
-    Dado que acesso a página de cadastro
-    Quando submeto o meu cadastro sem o email
-    Então devo ver Oops! Informe seu email
 @temp
-Cenario: Senha não informada
-    Dado que acesso a página de cadastro
-    Quando submeto o meu cadastro sem a senha
-    Então devo ver Oops! Informe sua senha
+Cenario: Email não informado
+	Dado que acesso a página de cadastro
+    Quando submeto o meu cadastro com email:
+    |email           |                  |
+    |senha           | q1w2e3           |
+    |senha_confirmada| q1w2e3           |
+    Então devo ver: "Oops! Informe seu email."
 
-Cenario: Senha divergente
-    Dado que acesso a página de cadastro
-    Quando submeto meu cadastro com senha divergente
-    Então devo ver Opps! Senhas não são iguais
 
-Cenario: Nenhum campo preenchido
-    Dado que acesso a página de cadastro
-    Quando submeto meu cadastro sem preencher os campos
-    Então devo ver Opps! Informe seu email e sua senha
+    Cenario: Senha não informada
+	Dado que acesso a página de cadastro
+    Quando submeto o meu cadastro com email:
+    |email           |davirb@hotmail.com |
+    |senha           |                   |
+    |senha_confirmada|                   |
+    Então devo ver: "Oops! Informe sua senha."
+
+
+Cenario: Senha não divergente
+	Dado que acesso a página de cadastro
+    Quando submeto o meu cadastro com email:
+    |email           |davirb@hotmail.com |
+    |senha           | q1w2e3            |
+    |senha_confirmada| 010405            |
+    Então devo ver: "Oops! Senhas não são iguais."
+
+
+
+Cenario: Senha não divergente
+	Dado que acesso a página de cadastro
+    Quando submeto o meu cadastro com email:
+    |email           |   |
+    |senha           |   |
+    |senha_confirmada|   |
+    Então devo ver: "Oops! Informe seu email e sua senha."
+
+
+
+

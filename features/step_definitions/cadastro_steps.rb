@@ -32,3 +32,14 @@
 
 
       end
+
+      Quando('submeto o meu cadastro sem a senha') do
+        find("input[name*=email]").set '1davirb@hotmail.com'
+        
+       click_on 'Cadastrar'
+      end
+      
+      Então('devo ver Oops! Informe sua senha') do
+        alert = find(".message p")
+        expect(alert.text).to eql 'Oops! Informe sua senha.'
+      end

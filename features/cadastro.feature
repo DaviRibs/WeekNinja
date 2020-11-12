@@ -29,4 +29,9 @@ Funcionalidade: Cadastro de Usuários
             | davirb@hotmail.com |        |                | Oops! Informe sua senha.             |
             | davirb@hotmail.com | q1w2r3 | adsbd3         | Oops! Senhas não são iguais.         |
             |                    |        |                | Oops! Informe seu email e sua senha. |
+    
+    @temp
+    Cenario: Validação do campo email
 
+        Quando acesso á pagina de cadastro
+        Então deve exibir a mensagem com o seguinte css: "input[type=email]"

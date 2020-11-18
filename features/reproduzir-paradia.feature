@@ -17,4 +17,4 @@
             | parodia | Sprints de Luta Sprints de Gloria |
             | banda   | Charlie Brown Bug                 |
 
-            Então essa paródia deve ficar em modo de reprodução
+            Então essa paródia deve fica no modo de reprodução

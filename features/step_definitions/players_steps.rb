@@ -1,4 +1,4 @@
-    Dado('Login com {string} e {string}') do |email, password|
+    Dado("Login com {string} e {string}") do |email, password|
         visit "http://parodify.qaninja.com.br"
         click_on "Login"
         
@@ -8,17 +8,24 @@
     end
 
 
-     Dado('que eu gosto de muito de {string}') do |cat|
+     Dado("que eu gosto de muito de {string}") do |cat|
         find("a[href='/search/new']").click
         find("img[src$='#{cat.downcase}.png']").click
 
-        sleep 10
+    
     end
     
-    Quando('toco a seguinte canção:') do |table|
-        parodi = table.rows_hash
+    Quando("toco a seguinte canção:") do |table|
+        @parody = table.rows_hash
+
+       find('a', text:  @parody[:banda]).click
+       song = find('.song-item', text: @parody[:parodia])
+       song.find(".fa-play-circle").click
     end
     
-    Então('essa paródia deve fica no modo de reprodução') do
-        pending # Write code here that turns the phrase above into concrete actions
+    Então("essa paródia deve fica no modo de reprodução") do
+      song_play =  find('.playing')
+      expect(song_play).to have_text @parody[:parodia]
+      sleep 10
+
     end

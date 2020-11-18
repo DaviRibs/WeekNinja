@@ -26,6 +26,5 @@
     Então("essa paródia deve fica no modo de reprodução") do
       song_play =  find('.playing')
       expect(song_play).to have_text @parody[:parodia]
-      sleep 10
-
+      
     end
